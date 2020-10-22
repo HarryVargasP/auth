@@ -16,12 +16,7 @@ const server = http.createServer(app);
 // >> Here will be the connection
 // to mongodb.
 
-mongoose.connect(mongo.uri, { 
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  })
+mongoose.connect(mongo.uri)
   .then((db) => {
     console.log("Conexión establecida con MongoDB");
   })

@@ -17,10 +17,14 @@ UserSchema.pre('save', function() {
 });
 
 // >> Here will be the User methods for the schema.
-UserSchema.methods = {};
+UserSchema.methods = {
+  validatePassword(password){
+    return bcrypt.compareSync(password, this.password)
+  }
+};
 
 // >> Here will be the User model using the User schema.
-const UserModel = mongoose.model('User', UserSchema);
+const UserModel = mongoose.model('users', UserSchema);
 
 module.exports = {
   schema: UserSchema,
