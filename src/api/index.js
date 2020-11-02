@@ -6,6 +6,8 @@ const { Router } = require('express');
 const main = require('./main');
 const users = require('./user');
 const auth = require('./auth');
+const { authenticate } = require('../services/middlewares');
+
 
 const router = new Router()
 
