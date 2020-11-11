@@ -12,8 +12,8 @@ const UserSchema = new mongoose.Schema({
 
 // >> Here will be the pre methods for the schema.
 UserSchema.pre('save', function() {
-  const secpass = bcrypt.hashSync(this.password, 10);
-  this.password = secpass;
+  const secpass = bcrypt.hashSync(this.password, 12);
+  this.password = hash;
 });
 
 // >> Here will be the User methods for the schema.

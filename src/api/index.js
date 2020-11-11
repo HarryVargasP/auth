@@ -16,7 +16,8 @@ const router = new Router()
 //
 // A) Uncomment this line:
 router.use(main.path, main.router);
-router.use(users.path, users.router);
+//router.use(users.path, users.router);
+router.use(users.path, authenticate, users.router);
 router.use(auth.path, auth.router);
 
 module.exports = router;

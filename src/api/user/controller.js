@@ -5,7 +5,7 @@ const UserController = {};
 // endpoints for the Users.
 
 UserController.getAllUsers = (req, res) => {
-    model.find({})
+    model.find({}, {username: 1,password: 1, _v: 1 })
     .then((users) => res.status(200).json(users))
     .catch((err) => res.status(400).json(err));
 };
